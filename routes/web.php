@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComproController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ComproController::class, 'index'])->name('compro');
+Route::get('/tentang', [ComproController::class, 'tentang'])->name('compro.tentang');
